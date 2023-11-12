@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--Thymeleaf 네임스페이스를 사용하기 위한 설정-->
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        User ID: <input type="text" name="userId">
+        User PW: <input type="password" name="userPwd">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!--Thymeleaf 템플릿 엔진에서 값이 바인딩된 변수 error의 값을 출력-->
+    <p th:text="${error}"></p>
+</body>
+</html>
