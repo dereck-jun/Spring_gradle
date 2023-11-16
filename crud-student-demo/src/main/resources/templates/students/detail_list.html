@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+    </tr>
+    <tbody>
+    <tr th:each="student: ${studentinfo}">
+        <td th:text="${student.studentId}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.phoneNumber}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/students">첫 화면으로 돌아가기</a>
+
+<h2>Update Student</h2>
+<!-- 업데이트를 수행할 때는 Student 객체 하나를 사용해야 함 -->
+<form action="#" th:action="@{/students}" th:object="${studentinfo}" method="get">
+    Name: <input type="text" th:field="*{name}" /><br>
+    Email: <input type="email" th:field="*{email}" /><br>
+    Phone Number: <input type="text" th:field="*{phoneNumber}" /><br>
+
+    <button type="submit">업데이트</button>
+</form>
+</body>
+</html>

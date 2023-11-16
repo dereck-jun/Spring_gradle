@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>신규 학생 추가</title>
+</head>
+<body>
+  <h2>신규 학생 추가하기</h2>
+  <form th:action="@{/students/create}" th:object="${studentinfo}" method="post">
+    Name: <input type="text" th:field="*{name}" /><br>
+    Email: <input type="email" th:field="*{email}" /><br>
+    Phone Number: <input type="text" th:field="*{phoneNumber}" /><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
