@@ -2,7 +2,7 @@ package com.example.demo.chap03.used;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class MorningGreet implements Greet {
     @Override
     public void greeting() {
